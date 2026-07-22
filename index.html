@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mi helencita♡</title>
+  
+  <!-- SEO & Meta -->
+  <meta name="description" content="Una experiencia musical y carta especial hecha con amor.">
+  <meta name="theme-color" content="#ded4e5">
+  
+  <!-- Fonts: Google Fonts (Outfit & Caveat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Main Viewport Container (Mobile First) -->
+  <main class="app-container">
+    
+    <!-- HEADER -->
+    <header class="app-header">
+      <h1 class="header-title">Mi Helencita ♡</h1>
+    </header>
+
+    <!-- ALBUM COVER ART -->
+    <section class="cover-section">
+      <div class="cover-wrapper breathing-animation">
+        <img src="assets/gatos.png" alt="Portada Gatitos" class="cover-image" id="coverImg">
+      </div>
+    </section>
+
+    <!-- QUOTE & HEART -->
+    <section class="quote-section">
+      <div class="quote-content">
+        <p class="quote-text">
+          Eres lo mas importante de mi vida, mi morenita hermosa <br>
+          me alegra haberte conocido :> 🤍
+        </p>
+      </div>
+      <button class="heart-btn" id="heartBtn" aria-label="Me gusta">
+        <svg class="heart-icon" id="heartIcon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+      </button>
+    </section>
+
+    <!-- PROGRESS BAR -->
+    <section class="player-progress-section">
+      <div class="progress-bar-container" id="progressContainer">
+        <input type="range" class="progress-range" id="progressRange" min="0" max="100" value="21.4" step="0.1" aria-label="Progreso de la canción">
+        <div class="progress-fill" id="progressFill" style="width: 21.4%;"></div>
+        <div class="progress-thumb" id="progressThumb" style="left: 21.4%;"></div>
+      </div>
+      <div class="time-stamps">
+        <span id="currentTime">0:45</span>
+        <span id="totalTime">3:35</span>
+      </div>
+    </section>
+
+    <!-- CONTROLS -->
+    <section class="player-controls-section">
+      <!-- Previous Track Button -->
+      <button class="control-btn" id="prevBtn" aria-label="Anterior">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="19 20 9 12 19 4 19 20"></polygon>
+          <line x1="5" y1="19" x2="5" y2="5"></line>
+        </svg>
+      </button>
+
+      <!-- Play / Pause Main Button -->
+      <button class="play-btn" id="playBtn" aria-label="Reproducir o Pausar">
+        <!-- Pause Icon (Default playing state as 0:45 in ref) -->
+        <svg class="play-icon" id="playIcon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+          <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+        </svg>
+      </button>
+
+      <!-- Next Track Button -->
+      <button class="control-btn" id="nextBtn" aria-label="Siguiente">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5 4 15 12 5 20 5 4"></polygon>
+          <line x1="19" y1="5" x2="19" y2="19"></line>
+        </svg>
+      </button>
+    </section>
+
+    <!-- BOTTOM ACTION BUTTON: "Mi carta" -->
+    <section class="bottom-action-section">
+      <button class="letter-card-btn" id="openLetterBtn">
+        <div class="envelope-icon-wrapper">
+          <!-- Pink line envelope icon with heart seal matching reference -->
+          <svg width="44" height="34" viewBox="0 0 48 36" fill="none" stroke="#e27c9a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="4" width="40" height="28" rx="5"></rect>
+            <path d="M4 6l20 15L44 6"></path>
+            <!-- Small Heart Seal -->
+            <path d="M24 21.5c-1.2-1.5-3.5-1.5-4.5 0s0 3 4.5 5.5c4.5-2.5 5.5-4 4.5-5.5s-3.3-1.5-4.5 0z" fill="#e27c9a" stroke="none"/>
+          </svg>
+        </div>
+        <span class="letter-btn-text">Carta de amorsh</span>
+      </button>
+    </section>
+
+  </main>
+
+  <!-- LETTER MODAL OVERLAY -->
+  <div class="modal-overlay" id="letterModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeLetterBtn" aria-label="Cerrar carta">&times;</button>
+      
+      <div class="envelope-header">
+        <span class="stamp">♡</span>
+        <h2>Feliz 15 meses mi amor</h2>
+      </div>
+
+      <div class="letter-content" id="letterContent" contenteditable="true" spellcheck="false">
+        <p>Hola, mi niña</p>
+        <p>Hoy cumplimos 15 meses... 1 año y 3 meses jsjs y no sabes lo bonito que es para mi tenerte conmigo. A veces me pongo a pensar en todos los momentos que hemos vivido juntos y me doy cuenta lo importante que has sido para mi en todo momento, se que hubieron dias dificiles que, de alguna forma, nos han hecho mas fuertes</p>
+        <p>Quiero que sepas que cada vez estoy mas enamorado por ti y quiero expresarte mi amor de todas las maneras posibles quiero ser el mejor novio para ti</p>
+        <p>Gracias por estos 15 meses, por seguir a mi lado y no rendirte, no se que pasara mas adelante pero si se que quiero estar contigo y esperar el dia en que te vere de vestido blanco frente a un altar 🤍, Te amo bonita 🤍</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Audio Element -->
+  <audio id="audioPlayer" src="assets/music.mp3" preload="metadata"></audio>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
